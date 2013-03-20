@@ -7,7 +7,7 @@ cookbook_file "/usr/local/bin/node-config.sh" do
   mode "0755"
 end
 
-execute "/usr/local/bin/node-config.sh" do
+execute "/usr/local/bin/node-config.sh #{File.join(node['selenium']['server']['confpath'], 'node.json')}" do
   action :run
 end
 
@@ -18,7 +18,7 @@ template "/etc/init/selenium-node.conf" do
     :fbsize => "#{node['selenium']['xvfb']['fbsize']}",
     :xmx => "#{node['selenium']['node']['memory']}",
     :chromedriver => File.join(node['selenium']['server']['installpath'], 'chromedriver'),
-    :config => "#{node['selenium']['node']['config']}",
+    :config => File.join(node['selenium']['server']['confpath'], 'node.json'),
     :selenium => File.join(node['selenium']['server']['installpath'], 'selenium-server-standalone.jar'),
     :host => "#{node['selenium']['hub']['host']}",
     :port => "#{node['selenium']['hub']['port']}",
