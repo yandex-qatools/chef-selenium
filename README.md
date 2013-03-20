@@ -20,7 +20,7 @@ $ apt-get update > /dev/null; apt-get install chef
 ```
 $ mkdir cookbooks && cd cookbooks
 $ git clone git://github.com/d3rp/chef-selenium.git selenium
-$ cd ../ && chef-solo.tar.gz ./cookbooks
+$ cd ../ && tar czvf chef-solo.tar.gz ./cookbooks
 ```
 
 ```
