@@ -20,7 +20,7 @@ $ cat <<EOF>>recipe.json
     },
     "hub": {
       "host": "192.168.123.1"
-    }  
+    }
   },
   "run_list": [
     "recipe[selenium::firefox]",
@@ -46,9 +46,4 @@ $ cd ../ && tar czvf chef-solo.tar.gz ./cookbooks
 
 ```
 $ chef-solo -j recipe.json -r chef-solo.tar.gz
-```
-
-```
-$ start selenium-hub
-$ start selenium-node
 ```

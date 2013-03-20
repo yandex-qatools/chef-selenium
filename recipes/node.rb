@@ -24,3 +24,9 @@ template "/etc/init/selenium-node.conf" do
     :port => "#{node['selenium']['hub']['port']}",
     :log => File.join(node['selenium']['server']['logpath'], 'node.log')})
 end
+
+service "selenium-node" do
+  provider Chef::Provider::Service::Upstart
+  supports :restart => true, :start => true, :stop => true
+  action [:enable, :start]
+end

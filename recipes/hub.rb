@@ -10,3 +10,9 @@ template "/etc/init/selenium-hub.conf" do
     :options => "#{node['selenium']['hub']['options']}",
     :log => File.join(node['selenium']['server']['logpath'], 'node.log')})
 end
+
+service "selenium-hub" do
+  provider Chef::Provider::Service::Upstart
+  supports :restart => true, :start => true, :stop => true
+  action [:enable, :start]
+end
