@@ -1,0 +1,11 @@
+description "Selenium-grid node"
+
+start on runlevel [345]
+stop on shutdown
+
+# Automatically restart process if crashed
+respawn
+
+setuid selenium
+
+exec xvfb-run -a -s '-screen 0 <%= @fbsize %>' java -Djava.security.egd=file:/dev/./urandom -Xmx<%= @xmx %> -Dwebdriver.chrome.driver=<%= @chromedriver %> -jar <%= @selenium %> -role node -nodeConfig <%= @config %> -hubHost <%= @host %> -hubPort <%= @port %> >> <%= @log %> 2>&1

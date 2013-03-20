@@ -1,0 +1,11 @@
+description "Selenium-grid hub"
+
+start on runlevel [345]
+stop on shutdown
+
+# Automatically restart process if crashed
+respawn
+
+setuid selenium
+
+exec java -Djava.security.egd=file:/dev/./urandom -Xmx<%= @xmx %> -jar <%= @selenium %> -role hub -port <%= @port %> <%= @options %> >> <%= @log %> 2>&1
