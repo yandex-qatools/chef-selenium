@@ -1,6 +1,27 @@
+One host for hub and node
 ```
 $ cat <<EOF>>recipe.json
 {
+  "selenium": {
+    "server": {
+      "version": "2.31.0"
+    },
+    "chromedriver": {
+      "version": "26.0.1383.0"
+    },
+    "firefox": {
+      "version": "last"
+    },
+    "chrome": {
+      "version": "last"
+    },
+    "opera": {
+      "version": "last"
+    },
+    "hub": {
+      "host": "192.168.123.1"
+    }  
+  },
   "run_list": [
     "recipe[selenium::firefox]",
     "recipe[selenium::opera]",
