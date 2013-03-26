@@ -19,7 +19,7 @@ $ cat <<EOF>>recipe.json
       "version": "last"
     },
     "hub": {
-      "host": "192.168.123.1"
+      "host": "127.0.0.1"
     }
   },
   "run_list": [
