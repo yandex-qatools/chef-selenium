@@ -9,7 +9,7 @@ remote_file File.join(node['selenium']['server']['installpath'], 'selenium-serve
 end
 
 user node['selenium']['server']['user'] do
-    home "/home/selenium"
+    supports {:manage_home => trie}
     action :create
 end
 
