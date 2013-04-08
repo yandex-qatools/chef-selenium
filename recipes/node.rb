@@ -17,7 +17,7 @@ template "/etc/init/selenium-node.conf" do
   variables ({
     :fbsize => "#{node['selenium']['xvfb']['fbsize']}",
     :xmx => "#{node['selenium']['node']['memory']}",
-    :chromedriver => File.join(['selenium']['chromedriver']['installpath'], 'chromedriver'),
+    :chromedriver => File.join(node['selenium']['chromedriver']['installpath'], 'chromedriver'),
     :config => File.join(node['selenium']['server']['confpath'], 'node.json'),
     :selenium => File.join(node['selenium']['server']['installpath'], 'selenium-server-standalone.jar'),
     :host => "#{node['selenium']['hub']['host']}",
