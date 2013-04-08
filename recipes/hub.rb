@@ -8,7 +8,7 @@ template "/etc/init/selenium-hub.conf" do
     :selenium => File.join(node['selenium']['server']['installpath'], 'selenium-server-standalone.jar'),
     :port => "#{node['selenium']['hub']['port']}",
     :options => "#{node['selenium']['hub']['options']}",
-    :log => File.join(node['selenium']['server']['logpath'], 'node.log')})
+    :log => File.join(node['selenium']['server']['logpath'], 'hub.log')})
 end
 
 service "selenium-hub" do
