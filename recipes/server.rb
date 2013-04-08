@@ -8,7 +8,10 @@ remote_file File.join(node['selenium']['server']['installpath'], 'selenium-serve
   mode 0644
 end
 
-user node['selenium']['server']['user']
+user node['selenium']['server']['user'] do
+    home "/home/selenium"
+    action :create
+end
 
 directory node['selenium']['server']['logpath'] do
   owner node['selenium']['server']['user']
