@@ -1,0 +1,11 @@
+description "Selenium-grid ghostdriver"
+
+start on runlevel [345]
+stop on shutdown
+
+# Automatically restart process if crashed
+respawn
+
+setuid selenium
+
+exec <%= @phantomjs %> --webdriver=<%= @gdhost %> --webdriver-selenium-grid-hub=http://<%= @host %>:<%= @port %> >> <%= @log %> 2>&1

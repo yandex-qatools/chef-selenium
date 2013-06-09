@@ -1,4 +1,4 @@
-include_recipe "selenium::server"
+include_recipe "selenium::default"
 package "xvfb"
 
 cookbook_file "/usr/local/bin/node-config.sh" do
