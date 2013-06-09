@@ -33,7 +33,7 @@ end
 
 remote_file "/tmp/chromedriver_linux64_#{node['selenium']['chromedriver']['version']}.zip" do
   source "http://chromedriver.googlecode.com/files/chromedriver_linux64_#{node['selenium']['chromedriver']['version']}.zip"
-  action :create_if_missing
+  action :create
   notifies :run, "execute[unpack chromedriver]", :immediately
 end
 

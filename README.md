@@ -4,10 +4,10 @@ $ cat <<EOF>>recipe.json
 {
   "selenium": {
     "server": {
-      "version": "2.31.0"
+      "version": "2.33.0"
     },
     "chromedriver": {
-      "version": "26.0.1383.0"
+      "version": "2.0"
     },
     "firefox": {
       "version": "last"
@@ -27,6 +27,7 @@ $ cat <<EOF>>recipe.json
     "recipe[selenium::opera]",
     "recipe[selenium::chrome]",
     "recipe[selenium::node]",
+    "recipe[selenium::ghostdriver]",
     "recipe[selenium::hub]"
   ]
 }
@@ -35,7 +36,7 @@ EOF
 
 ```
 $ echo "deb http://apt.opscode.com/ precise-0.10 main" > /etc/apt/sources.list.d/opscode.list
-$ apt-get update > /dev/null; apt-get install chef
+$ apt-get update > /dev/null; apt-get install chef git-core
 ```
 
 ```
