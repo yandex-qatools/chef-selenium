@@ -8,4 +8,4 @@ respawn
 
 setuid selenium
 
-exec <%= @phantomjs %> --webdriver=<%= @gdhost %> --webdriver-selenium-grid-hub=http://<%= @host %>:<%= @port %> >> <%= @log %> 2>&1
+exec <%= @phantomjs %> --webdriver=<%= @gdport %> --webdriver-selenium-grid-hub=http://<%= @host %>:<%= @port %> >> <%= @log %> 2>&1
