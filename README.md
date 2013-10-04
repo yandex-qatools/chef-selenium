@@ -24,8 +24,6 @@ echo "chef chef/chef_server_url string localhost
       
       postfix postfix/procmail boolean false 
       
-      postfix postfix/bad_recipient_delimiter error
-      
       postfix postfix/protocols select
       
       postfix postfix/mailname string devfol.qa.yandex.net 
