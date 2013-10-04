@@ -20,7 +20,7 @@
     }
   },
   "run_list": [
-    "recipe[selenium::addrepos]"
+    "recipe[selenium::addrepos]",
     "recipe[selenium::firefox]",
     "recipe[selenium::opera]",
     "recipe[selenium::chrome]",
