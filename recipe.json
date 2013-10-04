@@ -1,0 +1,30 @@
+{
+  "selenium": {
+    "server": {
+      "version": "2.33.0"
+    },
+    "chromedriver": {
+      "version": "2.0"
+    },
+    "firefox": {
+      "version": "24.0"
+    },
+    "chrome": {
+      "version": "29.0"
+    },
+    "opera": {
+      "version": "12.16"
+    },
+    "hub": {
+      "host": "127.0.0.1"
+    }
+  },
+  "run_list": [
+    "recipe[selenium::firefox]",
+    "recipe[selenium::opera]",
+    "recipe[selenium::chrome]",
+    "recipe[selenium::node]",
+    "recipe[selenium::ghostdriver]",
+    "recipe[selenium::hub]"
+  ]
+}
