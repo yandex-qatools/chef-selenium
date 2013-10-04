@@ -1,0 +1,40 @@
+{
+    "capabilities":
+        [
+            {
+                "browserName": "firefox",
+                "version": "<%= @ffversion %>",
+                "maxInstances": <%= @ffmaxinstances %>,
+                "seleniumProtocol": "WebDriver",
+                "platform": "LINUX"
+            },
+            {
+                "browserName": "opera",
+                "version": "<%= @operaversion %>",
+                "maxInstances": <%= @operamaxinstances %>,
+                "seleniumProtocol": "WebDriver",
+                "platform": "LINUX"
+            },
+            {
+                "browserName": "chrome",
+                "version": "<%= @chromeversion %>",
+                "maxInstances": <%= @chromemaxinstances %>,
+                "seleniumProtocol": "WebDriver",
+                "platform": "LINUX"
+            },
+            {
+                "browserName": "htmlunit",
+                "version": "<%= @htmlunitversion %>",
+                "maxInstances": <%= @htmlunitmaxinstances %>,
+                "seleniumProtocol": "WebDriver",
+                "platform": "LINUX"
+            },
+        ],
+    "configuration":
+        {
+            "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+            "maxSession": 5,
+            "register": true,
+            "registerCycle": 5000
+        }
+}

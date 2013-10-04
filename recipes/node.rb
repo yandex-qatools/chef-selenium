@@ -1,14 +1,18 @@
 include_recipe "selenium::default"
 package "xvfb"
 
-cookbook_file "/usr/local/bin/node-config.sh" do
-  source "node-config.sh"
-  owner "root"
-  mode "0755"
-end
-
-execute "/usr/local/bin/node-config.sh #{File.join(node['selenium']['server']['confpath'], 'node.json')}" do
-  action :run
+template "/etc/selenium/node.json" do
+ source "node.json.erb"
+   mode 0644
+   variables ({
+   :ffversion => "#{node['selenium']['firefox']['version']}",
+   :ffmaxinstances => "#{node['selenium']['firefox']['maxInstances']}",
+   :operaversion => "#{node['selenium']['opera']['version']}",
+   :operamaxinstances => "#{node['selenium']['opera']['maxInstances']}",
+   :chromeversion => "#{node['selenium']['chrome']['version']}",
+   :chromemaxinstances => "#{node['selenium']['chrome']['maxInstances']}",
+   :htmlunitversion => "#{node['selenium']['htmlunit']['version']}",
+   :htmlunitmaxinstances => "#{node['selenium']['htmlunit']['maxInstances']}"})
 end
 
 template "/etc/init/selenium-node.conf" do
