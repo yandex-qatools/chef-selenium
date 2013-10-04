@@ -28,7 +28,7 @@ apt-get update > /dev/null; apt-get install chef git-core
 
 mkdir cookbooks && cd cookbooks
 
-git clone git://github.yandex-team.ru/urtow/selenium.git
+git clone git://github.com/yandex-qatools/chef-selenium.git
 
 mv selenium/recipe.json ../
 
